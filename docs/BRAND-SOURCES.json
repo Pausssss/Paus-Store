@@ -1,0 +1,182 @@
+[
+  {
+    "key": "nike",
+    "file": "assets/images/brands/nike.svg",
+    "source": "https://www.nike.com/vn/ (inline header SVG)",
+    "page": "https://www.nike.com/vn/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "0dee631752960b2f0ae9832d6c78c526d6b5cd5055321fd440653c8c9778e5d5"
+  },
+  {
+    "key": "jordan",
+    "file": "assets/images/brands/jordan.svg",
+    "source": "https://www.nike.com/vn/ (inline header SVG)",
+    "page": "https://www.nike.com/vn/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "ee4d9142c117434f1f54a333c062a58a3d9ccd4a878179677116f910ad2557db"
+  },
+  {
+    "key": "adidas",
+    "file": "assets/images/brands/adidas.svg",
+    "source": "https://www.adidas.com/us (inline header SVG)",
+    "page": "https://www.adidas.com/us",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "7db22704b9bf20a7e47fa367a7d06903a2c9619877326124f48e0dc530195e48"
+  },
+  {
+    "key": "asics",
+    "file": "assets/images/brands/asics.svg",
+    "source": "https://www.asics.com/us/en-us/ (inline header SVG)",
+    "page": "https://www.asics.com/us/en-us/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "fcb26f97e86d11f60eb9c352c95c93b4eefab80e6e78904b04bbe7d25e928e7d"
+  },
+  {
+    "key": "whoau",
+    "file": "assets/images/brands/whoau.svg",
+    "source": "https://www.whoau.com/ (inline header SVG)",
+    "page": "https://www.whoau.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "305fe0a1ccd80a9687bd4c5afa36b3689f6674fb0003c9c624218d463360d916"
+  },
+  {
+    "key": "badblood",
+    "file": "assets/images/brands/badblood.svg",
+    "source": "https://www.badblood.co.kr/ (inline header SVG)",
+    "page": "https://www.badblood.co.kr/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "52d84fe6f3a25ea1fa7eb43a4b28eee55afd8c91ddcc224e4808bf7a760d2dca"
+  },
+  {
+    "key": "gentlemonster",
+    "file": "assets/images/brands/gentlemonster.svg",
+    "source": "https://www.gentlemonster.com/us/en (inline header SVG)",
+    "page": "https://www.gentlemonster.com/us/en",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "b3158c069edd83cb80e6d60c18dea161711e653363bbfb328e245b3fa212d338"
+  },
+  {
+    "key": "newbalance",
+    "file": "assets/images/brands/newbalance.svg",
+    "source": "https://www.newbalance.com/ (inline header SVG)",
+    "page": "https://www.newbalance.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "67feba81a0eb76c1d0daa22475633f8dababcad9269f8cc68657ee9ee944c930"
+  },
+  {
+    "key": "mlb",
+    "file": "assets/images/brands/mlb.svg",
+    "source": "https://www.mlb-korea.com/_next/static/media/logo_mo.fa341d63.svg",
+    "page": "https://www.mlb-korea.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "b06843c3537ac8dffbf909312edcfa8425ea1d8a3afe693b5096c593dda3423e"
+  },
+  {
+    "key": "wilson",
+    "file": "assets/images/brands/wilson.svg",
+    "source": "https://www.wilson.com/cdn/shop/files/wilson-logo.svg?height=25&v=1780069513",
+    "page": "https://www.wilson.com/en-us",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "6c5dda574a75e5aeee9ee2082cc04aaab6ed3b37dd6efc7cfd6d263f8e2f4efe"
+  },
+  {
+    "key": "jeep",
+    "file": "assets/images/brands/jeep.png",
+    "source": "https://www.jeep.com/content/dam/fca-brands/na/jeep/en_us/global/header/logo-jeep.png",
+    "page": "https://www.jeep.com/",
+    "date": "2026-10-20",
+    "dark": true,
+    "sha256": "db06c360e0beb06955cd25bb3cf51bac0cd0f4bde730ee6038a3abb4a7dc8cc5"
+  },
+  {
+    "key": "skechers",
+    "file": "assets/images/brands/skechers.svg",
+    "source": "https://www.skechers.com/on/demandware.static/Sites-USSkechers-Site/-/default/dw1c74b94d/images/logo.svg",
+    "page": "https://www.skechers.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "4e685fb9161e448d74072b8a54e7e4d9b853f2b86b04cd468f9f2b2d862547a0"
+  },
+  {
+    "key": "lifework",
+    "file": "assets/images/brands/lifework.jpg",
+    "source": "https://lifework0329.cafe24.com/assets/icon/LW_LOGO.jpg",
+    "page": "https://www.lifeworkshop.co.kr/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "e4ecefbdd13a29b8e3940bd1c021688dcc086eb8359269913766537c4120c5dd"
+  },
+  {
+    "key": "puma",
+    "file": "assets/images/brands/puma.svg",
+    "source": "https://us.puma.com/_next/static/assets/icons/puma-logo.svg",
+    "page": "https://us.puma.com/us/en",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "e6f6bd51c36340daabd987adfe265e48e472bdb99a8e0f9c86d1ee6c7b2816cb"
+  },
+  {
+    "key": "newera",
+    "file": "assets/images/brands/newera.png",
+    "source": "https://www.neweracap.com/cdn/shop/files/Group_Copy.png?v=1642111361&width=240",
+    "page": "https://www.neweracap.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "cdef23d76f2236f5fa9aa8ee585e673288f8d47cdbf8fb6fef1632b482521803"
+  },
+  {
+    "key": "ralphlauren",
+    "file": "assets/images/brands/ralphlauren.svg",
+    "source": "https://www.ralphlauren.co.uk/on/demandware.static/-/Library-Sites-RalphLauren_EU_Library/default/dw39eba0ca/img/Brand_Logo_Library/_V2/RALPH-LAUREN/2025_ralph_lauren_logo_white.svg",
+    "page": "https://www.ralphlauren.co.uk/?ab=Geo_iUK_rUS_dUK&locale=en_GB",
+    "date": "2026-10-20",
+    "dark": true,
+    "sha256": "6fd6dee5fb0652106ed04719b240ce323d029138fd6d3af07028a69ed9d0d66e"
+  },
+  {
+    "key": "blueelephant",
+    "file": "assets/images/brands/blueelephant.png",
+    "source": "https://cafe24.poxo.com/ec01/bluelephant/f22z6rNVzS0oOMAXRv6gI79x2RzDe6/iZjhQl98Ub2QhIIjSZgWC9r7lDDoV4s4qCzK6jgpSu6ORrQmPFRJyKw==/_/web/upload/category/logo/v2_4ce72290e2aa54d2794a11df0bdfac1f_I0cjU2kOUp_top.jpg",
+    "page": "https://www.blueelephant.co/",
+    "date": "2026-10-20",
+    "dark": true,
+    "sha256": "74571d998898174daf29e8ccf7fc8bdc5c243e4294304851a25b3374bd340fe5"
+  },
+  {
+    "key": "adlv",
+    "file": "assets/images/brands/adlv.png",
+    "source": "https://cafe24.poxo.com/ec01/acmedelavie/Q7zhAIIL5f65Oq6+fSBlfNy0EBtPksouEO+AJoXioaW3TzhRVH6e57wh2lGvId4JZwMj5uQPnalGPU1K1CMWtQ==/_/web/0503main/logo_black.png",
+    "page": "https://www.acmedelavie.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "82eabfc050f65f0bd9236c1911d75ef52936eb61ccc282b1654d4c88900f3c04"
+  },
+  {
+    "key": "spao",
+    "file": "assets/images/brands/spao.png",
+    "source": "https://static.elandrs.com/spao/img/mo/common/logo_meta.png",
+    "page": "https://www.spao.com/",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "a4f787b6ddfc9f489238c0b28bba38e87e5d4d7c6c02931ff10590db9099dc61"
+  },
+  {
+    "key": "rayban",
+    "file": "assets/images/brands/rayban.svg",
+    "source": "https://www.ray-ban.com/rbstatichtml/assets/images/rayban-logo.b7b8fee4.svg",
+    "page": "https://www.ray-ban.com/usa",
+    "date": "2026-10-20",
+    "dark": false,
+    "sha256": "7234797280838365614dc8074a6512226bd9f8ab417603072a9b17e0968eec30"
+  }
+]

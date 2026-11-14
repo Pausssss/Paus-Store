@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Liên hệ PAUS Store để hỗ trợ chọn size và sản phẩm." />
+    <title>Liên hệ — PAUS Store</title>
+    <link href="assets/css/styles.css" rel="stylesheet" /><link href="assets/css/studio.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="https://paus-store-studio.adored-iris-6990.chatgpt.site/contact.html" rel="canonical" />
+  <meta property="og:title" content="Liên hệ — PAUS Store"><meta property="og:description" content="Giày, thời trang và phụ kiện tại PAUS."><meta property="og:image" content="https://paus-store-studio.adored-iris-6990.chatgpt.site/assets/images/social-cover.svg"><meta property="og:locale" content="vi_VN"></head>
+  <body data-catalog="skip"><a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div id="siteHeader"></div>
+    <main id="main" class="container">
+      <section class="page-hero">
+        <div class="breadcrumbs"><a href="index.html">PAUS</a> / LIÊN HỆ</div>
+        
+        <h1 class="display">Nhắn PAUS.</h1>
+        <p class="lead">
+          Hỏi về sản phẩm, chọn size hoặc kiểm tra đơn hàng cùng PAUS.
+        </p>
+      </section>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2 class="section-title">Kết nối</h2>
+          <p class="lead">Hỗ trợ chọn size, kiểm tra đơn hoặc hỏi thông tin sản phẩm.</p>
+          <div class="contact-links" id="contactLinks"></div>
+        </div>
+
+        <form class="contact-form" id="consultForm" novalidate>
+          <h2 class="section-title">Hỗ trợ chọn sản phẩm</h2>
+          <div class="fields">
+            <div class="field"><label for="contact-name">Tên</label><input id="contact-name" name="name" required /></div>
+            <div class="field"><label for="contact-budget">Ngân sách</label><input id="contact-budget" name="budget" placeholder="Ví dụ 1–3 triệu" />
+            </div>
+            <div class="field">
+              <label for="contact-productType">Nhóm sản phẩm</label><input id="contact-productType" name="productType" placeholder="Sneaker, áo, balo..." />
+            </div>
+            <div class="field">
+              <label for="contact-size">Size / số đo</label><input id="contact-size" name="size" placeholder="Ví dụ chân 25.5 cm / áo size L" />
+            </div>
+            <div class="field full">
+              <label for="contact-style">Phong cách & nhu cầu</label><textarea id="contact-style"
+                name="style"
+                placeholder="Streetwear, tối giản, đi hằng ngày..."
+              ></textarea>
+            </div>
+            <div class="field full">
+              <label for="contact-history">Sản phẩm đang quan tâm</label><textarea id="contact-history" name="history" placeholder="Tên sản phẩm hoặc thương hiệu"></textarea>
+            </div>
+          </div>
+          <button class="btn dark" style="margin-top: 15px">Soạn tin nhắn Zalo ↗</button>
+        <div id="contactResult" class="order-result" hidden aria-live="polite"></div></form>
+      </div>
+    </main>
+
+    <div id="siteFooter"></div>
+    <script src="assets/data/config.js"></script>
+<script src="assets/data/brands.js"></script>
+    <script src="assets/data/products.js"></script>
+<script src="assets/js/core/catalog.js"></script>
+    <script src="assets/data/coupons.js"></script>
+    <script src="assets/js/core/public-client.js"></script>
+    <script src="assets/data/supabase-config.js"></script>
+    <script src="assets/js/core/backend.js"></script>
+    <script src="assets/js/core/store.js"></script>
+    <script src="assets/js/pages/contact.js"></script>
+    <script src="assets/js/core/init.js"></script>
+  </body>
+</html>

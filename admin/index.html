@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Quản trị — PAUS</title><link rel="icon" href="../assets/icons/favicon.svg"><link rel="stylesheet" href="../assets/css/admin.css"></head>
+<body data-admin="true">
+<a class="admin-skip" href="#adminContent">Đến nội dung chính</a>
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="sidebar" aria-label="Điều hướng quản trị">
+    <a class="admin-brand" href="/admin/index.html"><b>PAUS</b><small>Quản trị cửa hàng</small></a>
+    <span class="sidebar-label">KHÔNG GIAN LÀM VIỆC</span>
+    <nav class="admin-nav" aria-label="Chức năng quản trị"><button type="button" class="active" data-view="dashboard" data-title="Tổng quan" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Tổng quan</span></button>
+<button type="button" class="" data-view="products" data-title="Sản phẩm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm0 10v8M3 8l9 5 9-5M8 5l9 5"/></svg><span>Sản phẩm</span></button>
+<button type="button" class="" data-view="orders" data-title="Đơn hàng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2V3Z"/><path d="M8 8h8M8 12h6"/></svg><span>Đơn hàng</span></button>
+<button type="button" class="" data-view="coupons" data-title="Mã giảm giá"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8V4h8l10 10-7 7L3 10V8Z"/><circle cx="7.5" cy="7.5" r="1"/></svg><span>Mã giảm giá</span></button>
+<button type="button" class="" data-view="subscribers" data-title="Email đăng ký"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Email đăng ký</span></button>
+<button type="button" class="" data-view="settings" data-title="Cài đặt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg><span>Cài đặt</span></button></nav>
+    <div class="sidebar-bottom"><a href="../index.html" target="_blank" rel="noopener">Xem cửa hàng <span aria-hidden="true">↗</span></a><button id="logoutBtn" type="button">Đăng xuất <span aria-hidden="true">↗</span></button></div>
+  </aside>
+  <button class="admin-scrim" id="adminScrim" aria-label="Đóng điều hướng" tabindex="-1" hidden></button>
+  <main class="admin-main" id="adminContent" tabindex="-1">
+    <header class="admin-topbar">
+      <div class="topbar-title"><button class="btn soft mobile-admin-menu" id="menuAdmin" type="button" aria-label="Mở điều hướng" aria-controls="sidebar" aria-expanded="false">☰</button><span class="topbar-prefix">Quản trị /</span><h1 id="pageTitle">Tổng quan</h1></div>
+      <div class="admin-top-actions"><span class="mode-badge" id="backendMode" role="status">Đang kết nối…</span><button class="btn soft" id="refreshAdmin" type="button">↻ Làm mới</button><span class="admin-avatar" aria-label="Quản trị viên PAUS">P</span></div>
+    </header>
+    <div class="admin-content" aria-busy="true" id="adminWorkspace">
+      <div class="admin-feedback error" id="adminGlobalMessage" role="alert" tabindex="-1" hidden></div>
+      <div class="notice" id="demoNotice" hidden><strong>Bản dùng thử trên máy này</strong>Thay đổi chỉ lưu trong trình duyệt, chưa cập nhật cửa hàng trực tuyến.</div>
+      <section class="admin-view active" id="view-dashboard" aria-labelledby="dashboardTitle">
+        <div class="section-head dashboard-heading"><div><p class="section-kicker" id="adminDate">CỬA HÀNG CỦA BẠN</p><h2 id="dashboardTitle">Hôm nay tại PAUS.</h2><p>Theo dõi đơn hàng và những việc cần xử lý.</p></div><button class="btn dark" id="dashboardAddProduct" type="button" disabled>＋ Thêm sản phẩm</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><small>Sản phẩm đang bán</small><strong id="statProducts">—</strong><span><b id="statFeatured">—</b> sản phẩm nổi bật</span></article>
+          <article class="stat-card"><small>Tổng đơn hàng</small><strong id="statOrders">—</strong><span><b id="statPending">—</b> chờ xác nhận</span></article>
+          <article class="stat-card stat-revenue"><small>Doanh thu hoàn tất</small><strong id="statRevenue">—</strong><span>Đơn đã giao / hoàn thành</span></article>
+          <article class="stat-card"><small>Email đăng ký</small><strong id="statSubscribers">—</strong><span>Danh sách nhận tin</span></article>
+        </div>
+        <div class="admin-grid-2">
+          <section class="panel"><div class="panel-head"><h3>Đơn hàng gần đây</h3><button class="text-button" data-jump-view="orders" type="button">Xem tất cả ↗</button></div><div class="panel-body"><div class="orders-list" id="recentOrders"><div class="empty-admin loading-state">Đang tải đơn hàng…</div></div></div></section>
+          <section class="panel"><div class="panel-head"><h3>Sản phẩm sắp hết</h3><button class="text-button" data-jump-view="products" type="button">Quản lý ↗</button></div><div class="panel-body" id="lowStock"><div class="empty-admin loading-state">Đang kiểm tra tồn kho…</div></div></section>
+        </div>
+      </section>
+      <section class="admin-view" id="view-products" aria-labelledby="productsTitle">
+        <div class="section-head"><div><h2 id="productsTitle">Sản phẩm.</h2><p id="productCountAdmin" aria-live="polite">Đang tải danh mục…</p></div><div class="admin-head-actions"><button class="btn soft" id="exportProductsBtn" type="button" disabled>↓ Xuất CSV</button><button class="btn dark" id="addProductBtn" type="button" disabled>＋ Thêm sản phẩm</button></div></div>
+        <div class="toolbar"><label class="search-field" for="productSearch"><span class="sr-only">Tìm sản phẩm</span><input type="search" id="productSearch" placeholder="Tên sản phẩm, thương hiệu hoặc mã…" autocomplete="off"></label><label class="sr-only" for="productCategory">Danh mục sản phẩm</label><select id="productCategory"><option value="all">Tất cả danh mục</option><option value="Sneakers">Giày & sneaker</option><option value="Slides & Sandals">Dép & sandals</option><option value="Apparel">Thời trang</option><option value="Bags & Accessories">Phụ kiện</option></select><label class="sr-only" for="productStatus">Trạng thái sản phẩm</label><select id="productStatus"><option value="all">Tất cả trạng thái</option><option value="active">Đang bán</option><option value="inactive">Đang ẩn</option></select></div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Danh sách sản phẩm"><table class="admin-table"><thead><tr><th scope="col">Sản phẩm</th><th scope="col">Danh mục</th><th scope="col">Nhóm sản phẩm</th><th scope="col">Giá từ</th><th scope="col">Tồn kho</th><th scope="col">Trạng thái</th><th scope="col"><span class="sr-only">Thao tác</span></th></tr></thead><tbody id="productsBody"><tr><td colspan="7" class="empty-admin loading-state">Đang tải sản phẩm…</td></tr></tbody></table></div>
+        <div class="admin-pagination"><p id="productPageInfo" aria-live="polite"></p><nav id="productPagination" aria-label="Trang sản phẩm"></nav></div>
+      </section>
+      <section class="admin-view" id="view-orders" aria-labelledby="ordersTitle">
+        <div class="section-head"><div><h2 id="ordersTitle">Đơn hàng.</h2><p id="orderCountAdmin" aria-live="polite">Tiếp nhận và cập nhật trạng thái đơn.</p></div><button class="btn soft" id="exportOrdersBtn" type="button" disabled>↓ Xuất CSV</button></div>
+        <div class="toolbar"><label class="search-field" for="orderSearch"><span class="sr-only">Tìm đơn hàng</span><input type="search" id="orderSearch" placeholder="Mã đơn, tên hoặc số điện thoại…"></label><label class="sr-only" for="orderStatus">Trạng thái đơn hàng</label><select id="orderStatus"><option value="all">Tất cả trạng thái</option><option>Chờ xác nhận</option><option>Đã xác nhận</option><option>Đang chuẩn bị</option><option>Đang giao</option><option>Đã giao</option><option>Hoàn thành</option><option>Đã hủy</option></select></div>
+        <div class="orders-list" id="ordersAdmin"><div class="empty-admin loading-state">Đang tải đơn hàng…</div></div><div class="admin-pagination"><p id="orderPageInfo" aria-live="polite"></p><nav id="orderPagination" aria-label="Trang đơn hàng"></nav></div>
+      </section>
+      <section class="admin-view" id="view-coupons" aria-labelledby="couponsTitle">
+        <div class="section-head"><div><h2 id="couponsTitle">Mã giảm giá.</h2><p>Quản lý ưu đãi đang áp dụng.</p></div><button class="btn dark" id="addCouponBtn" type="button" disabled>＋ Tạo mã</button></div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Danh sách mã giảm giá"><table class="admin-table coupon-table"><thead><tr><th scope="col">Mã</th><th scope="col">Ưu đãi</th><th scope="col">Tên ưu đãi</th><th scope="col">Trạng thái</th><th scope="col"><span class="sr-only">Thao tác</span></th></tr></thead><tbody id="couponsBody"><tr><td colspan="5" class="empty-admin loading-state">Đang tải mã giảm giá…</td></tr></tbody></table></div>
+      </section>
+      <section class="admin-view" id="view-subscribers" aria-labelledby="subscribersTitle">
+        <div class="section-head"><div><h2 id="subscribersTitle">Email đăng ký.</h2><p id="subscriberCountAdmin">Khách đăng ký nhận thông tin từ PAUS.</p></div><button class="btn soft" id="exportSubscribersBtn" type="button" disabled>↓ Xuất CSV</button></div>
+        <div class="toolbar"><label class="search-field" for="subscriberSearch"><span class="sr-only">Tìm email đăng ký</span><input id="subscriberSearch" type="search" placeholder="Tìm địa chỉ email…"></label></div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Danh sách email đăng ký"><table class="admin-table subscribers-table"><thead><tr><th scope="col">Email</th><th scope="col">Ngày đăng ký</th><th scope="col">Trạng thái</th><th scope="col"><span class="sr-only">Thao tác</span></th></tr></thead><tbody id="subscribersBody"><tr><td colspan="4" class="empty-admin loading-state">Đang tải email đăng ký…</td></tr></tbody></table></div>
+        <div class="admin-pagination"><p id="subscriberPageInfo" aria-live="polite"></p><nav id="subscriberPagination" aria-label="Trang email đăng ký"></nav></div>
+      </section>
+      <section class="admin-view" id="view-settings" aria-labelledby="settingsTitle">
+        <div class="section-head"><div><h2 id="settingsTitle">Cài đặt cửa hàng.</h2><p>Thông tin liên hệ, giao hàng và thanh toán.</p></div></div>
+        <form id="settingsForm" class="settings-layout"><section class="settings-section"><h3>Thông tin liên hệ</h3><div class="form-grid"><div class="field"><label for="setting-zaloPhone">Số Zalo</label><input id="setting-zaloPhone" name="zaloPhone" type="tel"></div><div class="field"><label for="setting-hotline">Hotline</label><input id="setting-hotline" name="hotline" type="tel"></div><div class="field"><label for="setting-email">Email</label><input id="setting-email" name="email" type="email"></div><div class="field"><label for="setting-address">Địa chỉ</label><input id="setting-address" name="address" type="text"></div></div></section><section class="settings-section"><h3>Kênh bán hàng</h3><div class="form-grid"><div class="field"><label for="setting-tiktok">TikTok</label><input id="setting-tiktok" name="tiktok" type="url"></div><div class="field"><label for="setting-facebook">Facebook</label><input id="setting-facebook" name="facebook" type="url"></div><div class="field"><label for="setting-instagram">Instagram</label><input id="setting-instagram" name="instagram" type="url"></div><div class="field"><label for="setting-shopee">Shopee</label><input id="setting-shopee" name="shopee" type="url"></div></div></section><section class="settings-section"><h3>Giao hàng</h3><div class="form-grid"><div class="field"><label for="setting-freeShipThreshold">Ngưỡng miễn phí vận chuyển (đ)</label><input id="setting-freeShipThreshold" name="freeShipThreshold" type="number" min="0" step="1"><small class="file-hint">Nhập 0 nếu không áp dụng.</small></div><div class="field"><label for="setting-standardShipping">Phí tiêu chuẩn (đ)</label><input id="setting-standardShipping" name="standardShipping" type="number" min="0" step="1"></div><div class="field"><label for="setting-expressShipping">Phí giao nhanh (đ)</label><input id="setting-expressShipping" name="expressShipping" type="number" min="0" step="1"></div></div></section><section class="settings-section"><h3>Tài khoản nhận thanh toán</h3><div class="form-grid"><div class="field"><label for="setting-bankName">Ngân hàng</label><input id="setting-bankName" name="bankName" type="text"></div><div class="field"><label for="setting-bankAccount">Số tài khoản</label><input id="setting-bankAccount" name="bankAccount" type="text"></div><div class="field"><label for="setting-bankOwner">Chủ tài khoản</label><input id="setting-bankOwner" name="bankOwner" type="text"></div></div></section><div class="settings-footer"><p class="admin-feedback" data-form-feedback role="status" hidden></p><button class="btn dark settings-save" type="submit" disabled>Lưu cài đặt</button></div></form>
+      </section>
+    </div>
+  </main>
+</div>
+  <div class="modal-backdrop" id="productModal" role="presentation">
+   <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" tabindex="-1">
+    <div class="modal-head">
+     <h3 id="productModalTitle">
+      Sản phẩm
+     </h3>
+     <button id="closeProductModal" type="button" aria-label="Đóng cửa sổ">
+      ×
+     </button>
+    </div>
+    <div class="modal-body">
+     <form id="productForm"><p class="admin-feedback error" data-form-feedback role="alert" hidden></p>
+      <div class="form-grid"><h4 class="form-section-title first">Thông tin sản phẩm</h4><div class="field">
+        <label>
+         Thương hiệu *
+        </label>
+        <input name="brand" required="" aria-label="Thương hiệu"/>
+       </div>
+<div class="field">
+        <label>
+         Tên sản phẩm *
+        </label>
+        <input name="name" required="" aria-label="Tên sản phẩm"/>
+       </div>
+<div class="field full">
+        <label>
+         Slug URL
+        </label>
+        <input name="slug" placeholder="tu-dong-tao-tu-ten" aria-label="Đường dẫn sản phẩm"/>
+       </div>
+<div class="field">
+        <label>
+         Danh mục
+        </label>
+        <select name="category" aria-label="Danh mục">
+         <option>Sneakers</option>
+         <option>Slides &amp; Sandals</option>
+         <option>Apparel</option>
+         <option>Bags &amp; Accessories</option>
+        </select>
+       </div>
+<div class="field">
+        <label>
+         Nhóm thương hiệu
+        </label>
+        <input name="collection" list="collectionOptions" aria-label="Nhóm sản phẩm"><datalist id="collectionOptions"></datalist>
+       </div>
+<div class="field">
+        <label>
+         Nhãn sản phẩm
+        </label>
+        <input name="badge" placeholder="Bestseller / New / Sale" aria-label="Nhãn sản phẩm"/>
+       </div>
+<div class="field">
+        <label>
+         Thứ tự hiển thị
+        </label>
+        <input name="sort_order" type="number" value="0" aria-label="Thứ tự hiển thị"/>
+       </div>
+<div class="field" style="align-content:end">
+        <label class="check-row">
+         <input name="featured" type="checkbox"/>
+         Sản phẩm nổi bật
+        </label>
+        <label class="check-row">
+         <input checked="" name="active" type="checkbox"/>
+         Hiển thị sản phẩm
+        </label>
+       </div><h4 class="form-section-title">Màu sắc, size &amp; giá bán</h4><div class="field">
+        <label>
+         Tổng tồn kho
+        </label>
+        <input readonly min="0" name="stock" type="number" value="0" aria-label="Tổng tồn kho"/>
+       </div><div class="field full">
+        
+        <div class="variant-admin-builder">
+         <div class="variant-builder-head">
+          <div>
+           <div class="variant-builder-title-row">
+            <strong>Biến thể sản phẩm</strong>
+            <span class="variant-count" id="variantCount">0 màu / phiên bản</span>
+           </div>
+           <div class="file-hint">Quản lý ảnh, tồn kho, size và giá cho từng màu.</div>
+          </div>
+          <button class="btn dark" id="addVariantBtn" type="button">+ Thêm màu / phiên bản</button>
+         </div>
+         <div id="variantBuilder"></div>
+         <textarea hidden="hidden" name="variants"></textarea>
+        </div>
+       </div><details class="product-extra"><summary>Ảnh chung cho sản phẩm</summary><div class="form-grid"><div class="field full">
+        <label>
+         Ảnh đại diện mặc định <span style="font-weight:500;color:#8a8d85">(không bắt buộc)</span>
+        </label>
+        <div class="image-tools">
+         <img alt="Xem trước ảnh sản phẩm" class="thumb-preview" id="productPreview" src="../assets/images/product-fallback.svg"/>
+         <div>
+          <input name="image" placeholder="https://..." aria-label="Ảnh đại diện"/>
+          <input accept="image/*" id="imageUpload" aria-label="Tải ảnh đại diện" style="margin-top:8px" type="file"/>
+          <div class="file-hint">
+           Nếu để trống, website tự dùng ảnh của màu / phiên bản đầu tiên.
+          </div>
+         </div>
+        </div>
+       </div>
+<div class="field full">
+        <label>
+         Ảnh bổ sung <span style="font-weight:500;color:#8a8d85">(không bắt buộc)</span>
+        </label>
+        <textarea name="gallery" aria-label="Ảnh bổ sung"></textarea>
+        <input accept="image/*" id="galleryUpload" aria-label="Tải ảnh bổ sung" multiple="multiple" style="margin-top:8px" type="file"/>
+        <div class="file-hint">
+         Dùng khi muốn có thêm ảnh chung cho sản phẩm. Ảnh màu riêng được quản lý ở phần Biến thể phía trên.
+        </div>
+       </div></div></details><details class="product-extra"><summary>Mô tả &amp; thông số</summary><div class="form-grid"><div class="field full">
+        <label>
+         Điểm nổi bật — cách nhau dấu phẩy
+        </label>
+        <input name="features" placeholder="Chunky sole, Logo NY, Lifestyle" aria-label="Điểm nổi bật"/>
+       </div>
+<div class="field full">
+        <label>
+         Mô tả ngắn
+        </label>
+        <textarea name="short" aria-label="Mô tả ngắn"></textarea>
+       </div>
+<div class="field full">
+        <label>
+         Mô tả chi tiết
+        </label>
+        <textarea name="description" aria-label="Mô tả chi tiết"></textarea>
+       </div>
+<div class="field">
+        <label>
+         Chất liệu
+        </label>
+        <input name="material" placeholder="Leather · Mesh · Rubber" aria-label="Chất liệu"/>
+       </div>
+<div class="field">
+        <label>
+         Phom dáng
+        </label>
+        <input name="fit" placeholder="Regular fit" aria-label="Phom dáng"/>
+       </div>
+<div class="field">
+        <label>
+         Xuất xứ
+        </label>
+        <input name="origin" placeholder="Imported" aria-label="Xuất xứ"/>
+       </div>
+<div class="field">
+        <label>
+         Phong cách
+        </label>
+        <input name="style" placeholder="Street · Casual · Lifestyle" aria-label="Phong cách"/>
+       </div></div></details><details class="product-extra"><summary>Thông tin đánh giá</summary><div class="form-grid"><div class="field">
+        <label>
+         Đánh giá
+        </label>
+        <input max="5" min="0" name="rating" step="0.1" type="number" value="0" aria-label="Điểm đánh giá"/>
+       </div>
+<div class="field">
+        <label>
+         Số đánh giá
+        </label>
+        <input min="0" name="reviews" type="number" value="0" aria-label="Số đánh giá"/>
+       </div></div></details></div>
+      <div class="modal-actions">
+       <button class="btn soft" id="cancelProduct" type="button">
+        Hủy
+       </button>
+       <button class="btn dark" id="saveProduct" type="submit">
+        Lưu sản phẩm
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div class="modal-backdrop" id="couponModal" role="presentation">
+   <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="couponModalTitle" tabindex="-1" style="width:min(520px,100%)">
+    <div class="modal-head">
+     <h3 id="couponModalTitle">
+      Mã giảm giá
+     </h3>
+     <button id="closeCouponModal" type="button" aria-label="Đóng cửa sổ">
+      ×
+     </button>
+    </div>
+    <div class="modal-body">
+     <form id="couponForm"><p class="admin-feedback error" data-form-feedback role="alert" hidden></p>
+      <div class="form-grid">
+       <div class="field">
+        <label>
+         Mã *
+        </label>
+        <input name="code" required="" style="text-transform:uppercase" aria-label="Mã giảm giá"/>
+       </div>
+       <div class="field">
+        <label>
+         Loại
+        </label>
+        <select name="type" aria-label="Loại giảm giá">
+         <option value="percent">
+          Giảm %
+         </option>
+         <option value="fixed">
+          Giảm số tiền
+         </option>
+         <option value="shipping">
+          Miễn phí vận chuyển
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         Giá trị
+        </label>
+        <input min="0" name="value" type="number" aria-label="Giá trị ưu đãi"/>
+       </div>
+       <div class="field">
+        <label>
+         Nhãn
+        </label>
+        <input name="label" aria-label="Tên ưu đãi"/>
+       </div>
+       <div class="field full">
+        <label class="check-row">
+         <input checked="" name="active" type="checkbox"/>
+         Đang kích hoạt
+        </label>
+       </div>
+      </div>
+      <div class="modal-actions">
+       <button class="btn soft" id="cancelCoupon" type="button">
+        Hủy
+       </button>
+       <button class="btn dark" type="submit">
+        Lưu mã
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div class="modal-backdrop" id="orderModal" role="presentation">
+   <div class="admin-modal order-modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle" tabindex="-1">
+    <div class="modal-head">
+     <div>
+      <small class="modal-kicker">
+       CHI TIẾT ĐƠN HÀNG
+      </small>
+      <h3 id="orderModalTitle">
+       Đơn hàng
+      </h3>
+     </div>
+     <button id="closeOrderModal" type="button" aria-label="Đóng chi tiết đơn">
+      ×
+     </button>
+    </div>
+    <div class="modal-body" id="orderModalBody">
+    </div>
+    <div class="modal-actions order-modal-actions">
+     <button class="btn soft" id="copyOrderBtn" type="button">
+      Sao chép đơn
+     </button>
+     <a class="btn soft" id="orderZaloBtn" rel="noopener" target="_blank">
+      Mở Zalo
+     </a>
+     <button class="btn dark" id="closeOrderBottom" type="button">
+      Đóng
+     </button>
+    </div>
+   </div>
+  </div>
+  <div class="toast-admin" id="adminToast" role="status" aria-live="polite">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+  <script src="../assets/data/config.js">
+  </script>
+  <script src="../assets/data/supabase-config.js">
+  </script>
+  <script src="../assets/js/core/backend.js">
+  </script>
+  <script src="../assets/js/core/store.js">
+  </script>
+  <script src="../assets/js/admin/api.js">
+  </script>
+  <script src="../assets/js/admin/data.js"></script>
+  <script src="../assets/js/admin/ui.js"></script>
+  <script src="../assets/js/admin/admin.js">
+  </script>
+ </body>
+</html>

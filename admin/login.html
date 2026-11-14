@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Đăng nhập quản trị — PAUS</title><link rel="icon" href="../assets/icons/favicon.svg"><link rel="stylesheet" href="../assets/css/admin.css"></head>
+<body data-admin="true">
+<main class="login-page" id="main">
+  <section class="login-visual" aria-label="PAUS quản trị">
+    <a class="login-brand" href="../index.html">PAUS</a>
+    <div><h2>Mọi thứ.<br><span>Trong tầm tay.</span></h2><p>Quản lý sản phẩm, đơn hàng và cửa hàng PAUS trong một không gian làm việc.</p></div>
+    <small>PAUS / QUẢN TRỊ CỬA HÀNG</small>
+  </section>
+  <section class="login-box-wrap">
+    <div class="login-box">
+      <a class="login-back" href="../index.html">← Về cửa hàng</a>
+      <h1>Chào bạn trở lại.</h1><p>Đăng nhập bằng tài khoản quản trị PAUS.</p>
+      <div class="notice" id="setupNote" hidden><strong>Kết nối quản trị chưa sẵn sàng</strong>Kiểm tra cấu hình kết nối trước khi đăng nhập.</div>
+      <form id="loginForm">
+        <div class="field"><label for="email">Email quản trị</label><input type="email" id="email" name="email" autocomplete="username" placeholder="Email của bạn" required></div>
+        <div class="field"><label for="password">Mật khẩu</label><div class="password-wrap"><input type="password" id="password" name="password" autocomplete="current-password" placeholder="Mật khẩu của bạn" required><button class="password-toggle" id="togglePassword" type="button" aria-controls="password" aria-pressed="false">Hiện</button></div></div>
+        <button class="btn dark" type="submit">Đăng nhập quản trị ↗</button>
+        <div class="login-error" id="loginError" role="alert" aria-live="assertive"></div>
+      </form>
+      <div class="login-footnote">Dành cho tài khoản đã được cấp quyền quản trị.</div>
+    </div>
+  </section>
+</main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+  </script>
+  <script src="../assets/data/config.js">
+  </script>
+  <script src="../assets/data/supabase-config.js">
+  </script>
+  <script src="../assets/js/core/backend.js">
+  </script>
+  <script src="../assets/js/admin/api.js">
+  </script>
+  <script src="../assets/js/admin/ui.js"></script>
+  <script src="../assets/js/admin/login.js">
+  </script>
+ </body>
+</html>

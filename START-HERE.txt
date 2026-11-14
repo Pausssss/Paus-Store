@@ -1,0 +1,33 @@
+PAUS STORE — STUDIO 6
+
+1. Cài Node.js (18 trở lên).
+2. Mở terminal tại thư mục chứa package.json.
+3. Chạy: npm run dev
+4. Mở: http://localhost:3000
+
+Không cần npm install để chạy storefront.
+Windows: có thể mở tools/run-local.cmd.
+
+Kiểm tra: npm test
+Build: npm run build
+Thư mục triển khai: dist/
+
+Hướng dẫn: README.md
+Chỉnh nội dung: docs/EDIT-GUIDE.md
+Kết nối nhận đơn: docs/SETUP-SUPABASE.md
+Phạm vi kiểm tra: docs/QA-REPORT.md
+
+21 kiểm thử logic và kiểm tra tĩnh đã đạt. Chưa QA trực tiếp bằng trình duyệt.
+Khi backend chưa sẵn sàng, checkout chỉ tạo bản nháp để bạn tự gửi qua Zalo.
+
+MENU / LOGO / GỘP MÀU
+1.050 dòng gốc hiển thị thành 1.003 mẫu, giữ nguyên 2.121 giá theo size.
+20 logo được lấy từ website hãng và đóng gói sẵn, không tự vẽ.
+Hướng dẫn và kết quả rà dữ liệu: docs/CATALOG-GROUPING.md
+
+BẢN 6.1: Trang chủ thay Menu, giao diện Admin đã làm lại.
+Hướng dẫn quản trị: docs/ADMIN-GUIDE.md
+Cập nhật Vercel: npm run deploy:prod (chọn đúng project PAUS cũ).
+
+BẢN 6.2: Màu xanh dương nhạt, sửa khung logo/điều khiển ảnh, tối ưu tải và cache.
+Xem docs/PERFORMANCE.md để biết cách hoạt động và phạm vi đã kiểm tra.

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /checkout
+Disallow: /orders
+Disallow: /cart
+Disallow: /wishlist
+Sitemap: https://paus-store-studio.adored-iris-6990.chatgpt.site/sitemap.xml

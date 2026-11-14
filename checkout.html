@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head><meta name="robots" content="noindex,follow">
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Thanh toán — PAUS</title><meta name="description" content="PAUS Store — giày, quần áo và phụ kiện. Xem lựa chọn của bạn và nhận hỗ trợ từ PAUS.">
+    <link href="assets/css/styles.css" rel="stylesheet" /><link href="assets/css/studio.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="https://paus-store-studio.adored-iris-6990.chatgpt.site/checkout.html" rel="canonical" />
+  <meta property="og:title" content="Thanh toán — PAUS"><meta property="og:description" content="Giày, thời trang và phụ kiện tại PAUS."><meta property="og:image" content="https://paus-store-studio.adored-iris-6990.chatgpt.site/assets/images/social-cover.svg"><meta property="og:locale" content="vi_VN"></head>
+  <body><a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div id="siteHeader"></div>
+    <main id="main" class="container">
+      <section class="page-hero">
+        <div class="breadcrumbs">
+          <a href="index.html"> PAUS </a>
+          / ĐẶT HÀNG
+        </div>
+        
+        <h1 class="display">Hoàn tất đơn hàng.</h1><p class="lead">Kiểm tra thông tin nhận hàng và tổng dự kiến. PAUS sẽ xác nhận sản phẩm và hướng dẫn thanh toán trước khi xử lý.</p>
+      </section>
+      <form id="checkoutForm" novalidate>
+        <div class="checkout-grid">
+          <div>
+            <section class="form-card">
+              <h2>Thông tin nhận hàng</h2>
+              <div class="fields">
+                <div class="field"><label for="checkout-name"> Họ và tên * </label><input id="checkout-name" autocomplete="name" name="name" required="" />
+                </div>
+                <div class="field"><label for="checkout-phone"> Số điện thoại * </label><input id="checkout-phone" type="tel" maxlength="16" autocomplete="tel" inputmode="tel" name="phone" required="" />
+                </div>
+                <div class="field full"><label for="checkout-email"> Email </label><input id="checkout-email" autocomplete="email" name="email" type="email" />
+                </div>
+                <div class="field full"><label for="checkout-address"> Địa chỉ * </label><input id="checkout-address"
+                    autocomplete="street-address"
+                    name="address"
+                    placeholder="Số nhà, đường, phường/xã, quận/huyện"
+                    required=""
+                  />
+                </div>
+                <div class="field"><label for="checkout-city"> Tỉnh/Thành * </label><input id="checkout-city" name="city" placeholder="Ví dụ: TP.HCM" required="" />
+                </div>
+                <div class="field"><label for="checkout-note"> Ghi chú </label><input id="checkout-note" name="note" placeholder="Giờ nhận hàng, lời nhắn..." />
+                </div>
+              </div>
+            </section>
+            <section class="form-card">
+              <h2>Giao hàng</h2>
+              <label class="choice">
+                <input checked="" name="shipping" type="radio" value="standard" />
+                <div>
+                  <b> Giao hàng tiêu chuẩn </b>
+                  <span id="standardShippingLabel"> Đang tính phí… </span>
+                </div>
+              </label>
+              <label class="choice">
+                <input name="shipping" type="radio" value="express" />
+                <div>
+                  <b> Giao hàng nhanh </b>
+                  <span id="expressShippingLabel"> Đang tính phí… </span>
+                </div>
+              </label>
+            </section>
+            <section class="form-card">
+              <h2>Thanh toán</h2>
+              <label class="choice">
+                <input checked="" name="payment" type="radio" value="cod" />
+                <div>
+                  <b> COD — thanh toán khi nhận hàng </b>
+                  <span> PAUS xác nhận đơn trước khi giao. </span>
+                </div>
+              </label>
+              <label class="choice" id="bankPaymentChoice">
+                <input name="payment" type="radio" value="bank" />
+                <div>
+                  <b> Chuyển khoản ngân hàng </b>
+                  <span> Thanh toán theo hướng dẫn sau khi PAUS xác nhận. </span>
+                </div>
+              </label>
+              <label class="choice">
+                <input name="payment" type="radio" value="zalo" />
+                <div>
+                  <b> Trao đổi trực tiếp qua Zalo </b>
+                  <span> Phù hợp khi cần tư vấn thêm trước khi thanh toán. </span>
+                </div>
+              </label>
+            </section>
+          </div>
+          <aside class="summary-card" id="checkoutSummary"></aside>
+        </div>
+      </form><section id="orderResult" hidden class="order-result" aria-live="polite" tabindex="-1"></section>
+    </main>
+    <div id="siteFooter"></div>
+    <script src="assets/data/config.js"></script>
+<script src="assets/data/brands.js"></script>
+    <script src="assets/data/products.js"></script>
+<script src="assets/js/core/catalog.js"></script>
+    <script src="assets/data/coupons.js"></script>
+    <script src="assets/js/core/public-client.js"></script>
+    <script src="assets/data/supabase-config.js"></script>
+    <script src="assets/js/core/backend.js"></script>
+    <script src="assets/js/core/store.js"></script>
+    <script src="assets/js/pages/checkout.js"></script>
+    <script src="assets/js/core/init.js"></script>
+  </body>
+</html>

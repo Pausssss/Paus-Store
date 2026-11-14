@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Mua giày, quần áo và phụ kiện tại PAUS Store." />
+    <title>Shop — PAUS Store</title>
+    <link href="assets/css/styles.css" rel="stylesheet" /><link href="assets/css/studio.css" rel="stylesheet" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="https://paus-store-studio.adored-iris-6990.chatgpt.site/shop.html" rel="canonical" />
+  <meta property="og:title" content="Shop — PAUS Store"><meta property="og:description" content="Giày, thời trang và phụ kiện tại PAUS."><meta property="og:image" content="https://paus-store-studio.adored-iris-6990.chatgpt.site/assets/images/social-cover.svg"><meta property="og:locale" content="vi_VN"></head>
+  <body><a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div id="siteHeader"></div>
+    <main id="main" class="container">
+      <section class="page-hero">
+        <div class="breadcrumbs"><a href="index.html">PAUS</a> / SHOP</div>
+        
+        <h1 class="display">Tìm món hợp gu.</h1><p class="lead">Giày, thời trang và phụ kiện. Tìm lựa chọn hợp với bạn.</p><form class="shop-search" id="shopSearch"><label class="sr-only" for="shopQuery">Tìm sản phẩm</label><input id="shopQuery" type="search" placeholder="Tên mẫu, thương hiệu hoặc mã sản phẩm…"><button type="submit" aria-label="Tìm sản phẩm">↗</button></form>
+      </section>
+
+      <section class="shop-layout">
+        <aside class="filters" id="filters">
+          <div class="filter-group">
+            <b>Danh mục</b>
+            <div id="categoryFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <b>Bộ sưu tập</b>
+            <div id="collectionFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <b>Thương hiệu</b>
+            <div id="brandFilters"></div>
+          </div>
+
+          <div class="filter-group">
+            <b>Khoảng giá</b>
+            <div class="range-row">
+              <input id="minPrice" type="number" min="0" step="10000" aria-label="Giá thấp nhất" inputmode="numeric" placeholder="Từ" />
+              <input id="maxPrice" type="number" min="0" step="10000" aria-label="Giá cao nhất" inputmode="numeric" placeholder="Đến" />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <button class="btn light full" id="resetFilters" type="button">Đặt lại bộ lọc</button>
+          </div>
+        </aside>
+
+        <div class="shop-products">
+          <div class="shop-top">
+            <div>
+              <button class="btn light mobile-filter" id="mobileFilter" type="button" aria-controls="filters" aria-expanded="false">
+                Bộ lọc
+              </button>
+              <span id="resultCount" aria-live="polite"></span>
+            </div>
+            <select id="sortSelect" aria-label="Sắp xếp">
+              <option value="featured">Nổi bật</option>
+              <option value="priceAsc">Giá thấp → cao</option>
+              <option value="priceDesc">Giá cao → thấp</option>
+              
+              <option value="name">Tên A → Z</option>
+            </select>
+          </div>
+          <div class="active-filters" id="activeFilters"></div>
+          <div class="product-grid" id="shopGrid" aria-busy="true"><p class="loading-note">Đang chuẩn bị sản phẩm…</p></div><nav id="shopPagination" class="pagination" aria-label="Phân trang sản phẩm"></nav><p class="pagination-info" id="pageInfo"></p>
+        </div>
+      </section>
+    </main>
+
+    <div id="siteFooter"></div>
+    <script src="assets/data/config.js"></script>
+<script src="assets/data/brands.js"></script>
+    <script src="assets/data/products.js"></script>
+<script src="assets/js/core/catalog.js"></script>
+    <script src="assets/data/coupons.js"></script>
+    <script src="assets/js/core/public-client.js"></script>
+    <script src="assets/data/supabase-config.js"></script>
+    <script src="assets/js/core/backend.js"></script>
+    <script src="assets/js/core/store.js"></script>
+    <script src="assets/js/pages/shop.js"></script>
+    <script src="assets/js/core/init.js"></script>
+  </body>
+</html>
